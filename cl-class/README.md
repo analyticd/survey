@@ -1,11 +1,14 @@
-# CLにおけるクラス
+# CLにおけるクラス (Class in)
 
 ## Common Lisp Object System
 略称CLOS。Common Lispをオブジェクト指向的に扱えるように標準機能として実装された。  
 多重ディスパッチ・多重継承・動的クラス変更を大きな特徴として備えている。  
+(Abbreviation CLOS. It was implemented as a standard function so that Common Lisp
+can do object-orientation. Multi-dispatch · Multiple inheritance · Dynamic
+class change as a major feature.)
 
 ## 使い方  
-1 クラス定義  
+1 クラス定義  (Class definition)
 ```lisp
 (defclass flyable () ())                ;; as an interface
 
@@ -27,7 +30,7 @@
        :initarg :to)))
 ```
 
-2 メソッド定義  
+2 メソッド定義  (Method definition)
 ```lisp
 (defmethod fly ((obj flyable))                ;; fly method for flyable
   (format t "~A can fly!!~%"
@@ -51,13 +54,13 @@
 	  (get-onmtp bird))))
 ```
 
-3 インスタンス化  
+3 インスタンス化  (Instantiation)
 ```lisp
 (setf karas (make-instance 'bird :name "crow" :color 'black))
 (setf jal (make-instance 'airplane :from 'tokyo :to 'los-angeles))
 ```
 
-4 メソッド呼び出し
+4 メソッド呼び出し (Method invocation)
 ```lisp
 (fly jal)
 (look-for karas)
